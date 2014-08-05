@@ -12,3 +12,13 @@
  *= require_tree .
  *= require foundation 
  */
+
+
+
+#banner {
+	padding:0px 0px 15px 15px;
+	background-color: #596885;
+}
+#banner h1 {
+	color: white;
+}

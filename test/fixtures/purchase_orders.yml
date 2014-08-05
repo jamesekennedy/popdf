@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  number: 1
+  budget: MyString
+  raised_by: MyString
+  your_company_name: MyString
+  delivery_address: MyText
+  supplier_name: MyString
+
+two:
+  number: 1
+  budget: MyString
+  raised_by: MyString
+  your_company_name: MyString
+  delivery_address: MyText
+  supplier_name: MyString

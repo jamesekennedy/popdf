@@ -1,0 +1,59 @@
+%h1 
+  Purchase Order
+.small
+  = @purchase_order.raised_by
+  = @purchase_order.delivery_address
+
+%br/
+
+.row
+  .large-6.columns
+    %p
+      %b PO #:
+      = @purchase_order.number
+  .large-6.columns
+    %p
+      %b Budget:
+      = @purchase_order.budget
+.row
+  .large-6.columns
+    %p
+      %b Raised by:
+      = @purchase_order.raised_by
+  .large-6.columns
+    %p
+      %b Company name:
+      = @purchase_order.your_company_name
+.row
+  .large-6.columns
+    %p
+      %b Supplier name:
+      = @purchase_order.supplier_name
+
+
+  .large-6.columns
+    %p
+      %b Delivery address:
+      = @purchase_order.delivery_address
+
+
+
+%table{ style: "width:100%;"}
+  %thead
+    %tr
+      %td Item
+      %td Quantity
+      %td Tax
+      %td Cost
+
+  - @purchase_order.line_items.each do |line_item|
+    %tr
+      %td
+        = line_item.description
+      %td
+        = line_item.quantity
+      %td
+        = line_item.tax_rate
+      %td
+        = line_item.price
+

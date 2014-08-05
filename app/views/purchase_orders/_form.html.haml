@@ -1,0 +1,44 @@
+= form_for @purchase_order do |f|
+  - if @purchase_order.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@purchase_order.errors.count, "error")} prohibited this purchase_order from being saved:"
+      %ul
+        - @purchase_order.errors.full_messages.each do |msg|
+          %li= msg
+
+  .field
+    = f.label :number
+    = f.number_field :number
+  .field
+    = f.label :raised_by
+    = f.text_field :raised_by
+  .field
+    = f.label :your_company_name
+    = f.text_field :your_company_name
+  .field
+    = f.label :delivery_address
+    = f.text_area :delivery_address
+  .field
+    = f.label :supplier_name
+    = f.text_field :supplier_name
+  %h3 Items
+  .row.hide
+    .large-6.columns
+      %label Description
+    .large-1.columns
+      %label Quantity
+    .large-2.columns
+      %label Tax Rate
+    .large-2.columns
+      %label Price
+    .large-1.columns
+
+  = f.fields_for :line_items do |li|
+    .line_item= render partial: "line_item" , locals: { f: li }
+  .row
+    .large-12.columns
+      .right= link_to_add_fields "Add Line", f, :line_items
+
+  .actions
+  = f.submit 'Save', class: :button
+

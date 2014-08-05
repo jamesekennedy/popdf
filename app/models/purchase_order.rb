@@ -8,4 +8,22 @@ class PurchaseOrder < ActiveRecord::Base
   accepts_nested_attributes_for :line_items
 
 
+  def total
+
+  	line_items.sum(:price)
+  	
+  end
+
+
+  def total_including_tax
+
+  	line_items.each.sum do |li|
+
+  		li.price.to_f * (1 + ( li.tax_rate.to_f / 100 ))
+
+
+  	end
+  	
+  end
+
 end

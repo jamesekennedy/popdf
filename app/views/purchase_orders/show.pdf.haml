@@ -11,6 +11,7 @@
     %p
       %b PO #:
       = @purchase_order.number
+      = @purchase_order.budget
 .row
   .large-6.columns
     %p
@@ -51,5 +52,17 @@
       %td
         = line_item.tax_rate
       %td
-        = line_item.price
+        = number_to_currency line_item.price
 
+
+  %tfoot
+    %tr
+      %td
+      %td
+      %td Total ex Tax
+      %td=  number_to_currency @purchase_order.total
+    %tr
+      %td
+      %td
+      %td Total Inc Tax
+      %td= number_to_currency @purchase_order.total_including_tax

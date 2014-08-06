@@ -93,7 +93,8 @@
   .row
     .large-12.columns
     - @purchase_order.notes.each do |note|
-      .panel= note.content
+      .panel
+        = simple_format note.content
 
 .row
   .large-12.columns

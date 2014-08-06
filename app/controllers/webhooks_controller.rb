@@ -22,7 +22,7 @@ class WebhooksController < ApplicationController
 
     else
 
-      render json: {message: "Unable to find tenant #{tenant_name}"}, status: 404
+      render json: {message: "Unable to find purchase order "}, status: 404
 
     end
   end

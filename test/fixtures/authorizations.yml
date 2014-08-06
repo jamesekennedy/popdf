@@ -4,10 +4,10 @@ one:
   email: MyString
   authorization_key: MyString
   authorized: false
-  purchaseo_order_id: 1
+  purchase_order_id: 1
 
 two:
   email: MyString
   authorization_key: MyString
   authorized: false
-  purchaseo_order_id: 1
+  purchase_order_id: 1

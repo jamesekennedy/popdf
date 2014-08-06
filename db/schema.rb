@@ -22,8 +22,15 @@ ActiveRecord::Schema.define(:version => 20140806152841) do
     t.datetime "updated_at",        :null => false
   end
 
-# Could not dump table "line_items" because of following StandardError
-#   Unknown type 'reference' for column 'purchase_order_id'
+  create_table "line_items", :force => true do |t|
+    t.string   "description"
+    t.integer  "quantity"
+    t.integer  "tax_rate"
+    t.decimal  "price"
+    t.datetime "created_at",        :null => false
+    t.datetime "updated_at",        :null => false
+    t.integer  "purchase_order_id"
+  end
 
   create_table "notes", :force => true do |t|
     t.string   "content"

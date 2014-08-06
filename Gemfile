@@ -5,7 +5,10 @@ gem 'rails', '3.2.13'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-group :development do
+group :development  do
+  gem 'sqlite3'
+end
+group :test do
   gem 'sqlite3'
 end
 gem 'pg'
@@ -49,3 +52,4 @@ gem 'zurb-foundation'
 gem 'unicorn'
 gem 'capistrano'
 gem "postmark-rails", :require => "postmark-rails"
+gem 'postmark-mitt'

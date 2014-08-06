@@ -3,9 +3,16 @@ class WebhooksController < ApplicationController
   skip_before_filter :verify_authenticity_token 
 
    def postmark
+   	
     text = request.body.read
     email = Postmark::Mitt.new text
-    json = JSON.parse text
+
+
+
+
+
+
+
 
 
     conversation_key = email.mailbox_hash
@@ -20,6 +27,7 @@ class WebhooksController < ApplicationController
       MESSAGE
       new_note = purchase_order.notes.new content: message
 
+      render json: purchase_order
     else
 
       render json: {message: "Unable to find purchase order "}, status: 404

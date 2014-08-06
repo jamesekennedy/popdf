@@ -1,0 +1,70 @@
+{
+  "From": "myUser@test.test",
+  "FromFull": {
+    "Email": "myUser@theirDomain.com",
+    "Name": "John Doe"
+  },
+  "To": "new_user@here.com",
+  "Bcc": "451d9b70cf9364d23ff6f9d51d870251569e+sales@inbound.postmarkapp.com",
+  "ToFull": [
+    {
+      "Email": "451d9b70cf9364d23ff6f9d51d870251569e+ahoy@inbound.postmarkapp.com",
+      "Name": ""
+    }
+  ],
+  "CC": "\"John Sample\" <sample.cc@emailDomain.com>, \"Mike Sample\" <another.cc@emailDomain.com>",
+  "CcFull": [
+    {
+      "Email": "sample.cc@emailDomain.com",
+      "Name": "John Sample"
+    },
+    {
+      "Email": "another.cc@emailDomain.com",
+      "Name": "Mike Sample"
+    }
+  ],
+  "ReplyTo": "myUsersReplyAddress@theirDomain.com",
+  "Subject": "This is an inbound message",
+  "MessageID": "22c74902-a0c1-4511-804f2-341342852c90",
+  "Date": "Thu, 5 Apr 2012 16:59:01 +0200",
+  "MailboxHash": "test",
+  "TextBody": "[ASCII]",
+  "HtmlBody": "[HTML(encoded)]",
+  "Tag": "",
+  "Headers": [
+    {
+      "Name": "MIME-Version",
+      "Value": "1.0"
+    },
+    {
+      "Name": "X-Spam-Status",
+      "Value": "No"
+    },
+    {
+      "Name": "X-Spam-Score",
+      "Value": "-0.8"
+    },
+    {
+      "Name": "X-Spam-Tests",
+      "Value": "DKIM_SIGNED,DKIM_VALID,DKIM_VALID_AU,RCVD_IN_DNSWL_LOW"
+    },
+    {
+      "Name": "Received-SPF",
+      "Value": "Pass (sender SPF authorized) identity=mailfrom; client-ip=209.85.160.42; helo=mail-pw0-f42.google.com; envelope-from=support@postmarkapp.com; receiver=451d9b70cf9364d23ff6f9d51d870251569e+ahoy@inbound.postmarkapp.com"
+    }
+  ],
+  "Attachments": [
+    {
+      "Content-Length": 4096,
+      "Content": "[BASE64]",
+      "ContentType": "image\/png",
+      "Name": "myimage.png"
+    },
+    {
+      "Content-Length": 16384,
+      "Content": "[BASE64]",
+      "ContentType": "application\/msword",
+      "Name": "mypaper.doc"
+    }
+  ]
+}

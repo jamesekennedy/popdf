@@ -1,0 +1,64 @@
+{
+  "FromName": "James Kennedy",
+  "From": "james@jamesknned.ie",
+  "FromFull": {
+    "Email": "james@jameskennedy.ie",
+    "Name": "James Kennedy"
+  },
+  "To": "james@jameskennedy.ie",
+  "ToFull": [
+    {
+      "Email": "james@jameskennedy.ie",
+      "Name": "JKY Kennedy"
+    }
+  ],
+  "Cc": "",
+  "CcFull": [],
+  "ReplyTo": "",
+  "Subject": "Test email",
+  "MessageID": "15de9d77-bf3a-4667-9321-080334191d87",
+  "Date": "Wed, 9 Apr 2014 11:46:21 +0200",
+  "MailboxHash": "sales",
+  "TextBody": "Here we go.\r\n\r\n-- \r\nI help people measure their businesses: http:\/\/utm.io\/4trkd\r\n",
+  "HtmlBody": "<div dir=\"ltr\">Here we go.<br clear=\"all\"><div><br><\/div>-- <br><div dir=\"ltr\"><span style=\"color:rgb(89,84,65);font-family:Verdana,Arial;font-size:10px\">I help people measure their businesses:\u00a0<\/span><a href=\"http:\/\/utm.io\/4trkd\" style=\"color:rgb(42,133,179);text-decoration:none;display:inline-block;white-space:pre;width:183px;overflow:hidden;vertical-align:-2px;font-family:Verdana,Arial;font-size:10px\" target=\"_blank\">http:\/\/utm.io\/4trkd<\/a><br>\r\n<\/div>\r\n<img src=\"https:\/\/t.yesware.com\/t\/30cce44633a68551e28d4c3079067e65033df611\/a39f0702949c031c8fb0e356d6e69f48\/spacer.gif\" style=\"border: 0; width: 0px; height: 0px;\" width=\"0\" height=\"0\"><img src=\"http:\/\/t.yesware.com\/t\/30cce44633a68551e28d4c3079067e65033df611\/a39f0702949c031c8fb0e356d6e69f48\/spacer.gif\" style=\"border: 0; width: 0px; height: 0px;\" width=\"0\" height=\"0\"><font face=\"yw-30cce44633a68551e28d4c3079067e65033df611-a39f0702949c031c8fb0e356d6e69f48--tocb\" style><\/font><\/div>\r\n",
+  "Tag": "",
+  "Headers": [
+    {
+      "Name": "X-Spam-Checker-Version",
+      "Value": "SpamAssassin 3.3.1 (2010-03-16) on sc-ord-inbound1"
+    },
+    {
+      "Name": "X-Spam-Status",
+      "Value": "No"
+    },
+    {
+      "Name": "X-Spam-Score",
+      "Value": "1.9"
+    },
+    {
+      "Name": "X-Spam-Tests",
+      "Value": "DKIM_SIGNED,DKIM_VALID,DKIM_VALID_AU,FREEMAIL_FROM,HTML_FONT_FACE_BAD,HTML_IMAGE_ONLY_12,HTML_IMAGE_RATIO_02,HTML_MESSAGE,RCVD_IN_DNSWL_LOW,SPF_PASS,T_REMOTE_IMAGE"
+    },
+    {
+      "Name": "Received-SPF",
+      "Value": "Pass (sender SPF authorized) identity=mailfrom; client-ip=209.85.160.174; helo=mail-yk0-f174.google.com; envelope-from=jamesindublin@gmail.com; receiver=203dc2a62201514020c877d21c30a883+sales@inbound.postmarkapp.com"
+    },
+    {
+      "Name": "DKIM-Signature",
+      "Value": "v=1; a=rsa-sha256; c=relaxed\/relaxed;        d=gmail.com; s=20120113;        h=mime-version:date:message-id:subject:from:to:content-type;        bh=Cz3H5+2dvF5v123g3iC6jBbY370yRDAfW00\/0lyWf1k=;        b=GdFw0RWy0bZXDxgWfMJh9IgEqXZbJK5+QtDgqP7BE1mPtVAD8pEd7UzSdOrAuwJmrV         8ICbYlqzW04oMVZjam+tse5GRd7AN9SgOoBZ4LbeKyoP3uZFYkre9ndd6TKQbaAUd2ce         PqqyGnfmG49CduMTA7lxFGO4MLi4HzNhUctIDJt1eJ3qUXtJN4G0aEun5ttsF\/aVPil7         YwBAbv6nzOMwizaTKR61aK8qwACu\/LC\/BOAWROglSjHNtYxslqvgswowIs71nSvTwuC5         +2Rczc+\/WF\/VC0vq3qDunJnKGYdWpKftR2WwwgNFDGvnJ7RFgrZBwOSjeZwrqzVmyH9t         SnFA=="
+    },
+    {
+      "Name": "MIME-Version",
+      "Value": "1.0"
+    },
+    {
+      "Name": "X-Received",
+      "Value": "by 10.236.216.73 with SMTP id f69mr12732673yhp.37.1397036781508; Wed, 09 Apr 2014 02:46:21 -0700 (PDT)"
+    },
+    {
+      "Name": "Message-ID",
+      "Value": "<CALGpYmThTShC3btonnKNt8zD1JzsQh3P1fhsYYDM29nWms6uxQ@mail.gmail.com>"
+    }
+  ],
+  "Attachments": []
+}

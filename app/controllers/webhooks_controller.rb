@@ -3,7 +3,7 @@ class WebhooksController < ApplicationController
   skip_before_filter :verify_authenticity_token 
 
    def postmark
-   	
+
     text = request.body.read
     email = Postmark::Mitt.new text
 
@@ -30,7 +30,7 @@ class WebhooksController < ApplicationController
       render json: purchase_order
     else
 
-      render json: {message: "Unable to find purchase order "}, status: 404
+      render json: {message: "Unable to find purchase order "}, status: 200
 
     end
   end

@@ -19,7 +19,6 @@ class WebhooksController < ApplicationController
 
 		if purchase_order = PurchaseOrder.find_by_conversation_key( conversation_key )
       message = <<-MESSAGE
-        To: #{email.to}
         From: #{email.from}
         Subject: #{email.subject}
         --------------------------

@@ -11,7 +11,16 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140804155500) do
+ActiveRecord::Schema.define(:version => 20140806115559) do
+
+  create_table "authorizations", :force => true do |t|
+    t.string   "email"
+    t.string   "authorization_key"
+    t.boolean  "authorized"
+    t.integer  "purchase_order_id"
+    t.datetime "created_at",        :null => false
+    t.datetime "updated_at",        :null => false
+  end
 
 # Could not dump table "line_items" because of following StandardError
 #   Unknown type 'reference' for column 'purchase_order_id'
@@ -25,6 +34,7 @@ ActiveRecord::Schema.define(:version => 20140804155500) do
     t.string   "supplier_name"
     t.datetime "created_at",        :null => false
     t.datetime "updated_at",        :null => false
+    t.string   "status"
   end
 
 end

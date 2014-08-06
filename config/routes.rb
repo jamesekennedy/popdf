@@ -1,5 +1,7 @@
 Pdfpo::Application.routes.draw do
-  resources :purchase_orders
+  resources :purchase_orders do
+    resources :authorizations
+  end
 
 
   # The priority is based upon order of creation:

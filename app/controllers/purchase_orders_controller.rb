@@ -58,6 +58,7 @@ class PurchaseOrdersController < ApplicationController
   def create
 
     @purchase_order = PurchaseOrder.new(params[:purchase_order])
+    @purchase_order.status = "Not Authorized"
 
     session[:preset] = params[:purchase_order]
 

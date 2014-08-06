@@ -4,6 +4,9 @@ class LineItem < ActiveRecord::Base
   belongs_to :purchase_order
 
 
+
+  validates :price, presence: true
+  validates :description, presence: true
   def total
 
   	rate = tax_rate.blank? ? 0 : tax_rate / 100 

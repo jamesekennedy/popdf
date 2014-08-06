@@ -1,8 +1,9 @@
 class PurchaseOrder < ActiveRecord::Base
 
   has_many :line_items
+  has_many :authorizations
 
-  attr_accessible :budget, :delivery_address, :number, :raised_by, :supplier_name, :your_company_name, :line_items_attributes
+  attr_accessible :budget, :delivery_address, :number, :raised_by, :supplier_name, :your_company_name, :line_items_attributes, :status
 
 
   accepts_nested_attributes_for :line_items
@@ -23,8 +24,12 @@ class PurchaseOrder < ActiveRecord::Base
 
 
   	end
+
+
   	
   end
+
+
 
 
   def to_label

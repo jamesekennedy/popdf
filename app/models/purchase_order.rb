@@ -26,4 +26,11 @@ class PurchaseOrder < ActiveRecord::Base
   	
   end
 
+
+  def to_label
+
+  	"#{your_company_name} #{raised_by} Purchase Order #{number}".parameterize
+  	
+  end
+
 end

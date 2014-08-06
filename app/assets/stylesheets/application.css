@@ -14,7 +14,7 @@
  */
 
 
-.container {
+html body, .container {
 	background-color:lightgray;
 }
 

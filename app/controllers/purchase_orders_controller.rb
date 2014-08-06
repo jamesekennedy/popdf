@@ -19,7 +19,10 @@ class PurchaseOrdersController < ApplicationController
       format.html # show.html.erb
       format.json { render json: @purchase_order }
       format.pdf do
-        render :pdf => "show"
+        # headers['Content-Disposition'] = "attachment; filename=#{@purchase_order.to_label}"
+      
+        pdf = render pdf: "show"
+
       end
     end
   end
@@ -60,7 +63,7 @@ class PurchaseOrdersController < ApplicationController
 
     respond_to do |format|
       if @purchase_order.save
-        format.html { redirect_to purchase_order_path(@purchase_order, format: :pdf)}
+        format.html { redirect_to purchase_order_path(@purchase_order )}
         format.json { render json: @purchase_order, status: :created, location: @purchase_order }
       else
         format.html { render action: "new" }

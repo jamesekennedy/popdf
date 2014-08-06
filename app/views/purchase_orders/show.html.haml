@@ -1,73 +1,87 @@
-%h1 
-  Purchase Order
-.small
-  = @purchase_order.raised_by
-  = @purchase_order.delivery_address
 
-%br/
+#purchase_order.panel
+  %h1 
+    Purchase Order
+  .small
+    = @purchase_order.raised_by
+    = @purchase_order.delivery_address
+
+  %br/
+
+  .row
+    .large-6.columns
+      %p
+        %b PO #:
+        = @purchase_order.number
+        = @purchase_order.budget
+  .row
+    .large-6.columns
+      %p
+        %b Raised by:
+        = @purchase_order.raised_by
+    .large-6.columns
+      %p
+        %b Company name:
+        = @purchase_order.your_company_name
+  .row
+    .large-6.columns
+      %p
+        %b Supplier name:
+        = @purchase_order.supplier_name
+
+
+    .large-6.columns
+      %p
+        %b Delivery address:
+        = @purchase_order.delivery_address
+
+
+
+  %table{ style: "width:100%;"}
+    %thead
+      %tr
+        %td Item
+        %td Quantity
+        %td Tax
+        %td Unit Cost
+        %td Total
+
+    - @purchase_order.line_items.each do |line_item|
+      %tr
+        %td
+          = line_item.description
+        %td
+          = line_item.quantity
+        %td
+          = line_item.tax_rate
+        %td
+          = number_to_currency line_item.price
+        %td 
+          = number_to_currency line_item.total
+
+
+    %tfoot
+      %tr
+        %td
+        %td
+        %td
+        %td Total ex Tax
+        %td=  number_to_currency @purchase_order.total
+      %tr
+        %td
+        %td
+        %td
+        %td Total Inc Tax
+        %td= number_to_currency @purchase_order.total_including_tax
+
+
 
 .row
-  .large-6.columns
-    %p
-      %b PO #:
-      = @purchase_order.number
-      = @purchase_order.budget
-.row
-  .large-6.columns
-    %p
-      %b Raised by:
-      = @purchase_order.raised_by
-  .large-6.columns
-    %p
-      %b Company name:
-      = @purchase_order.your_company_name
-.row
-  .large-6.columns
-    %p
-      %b Supplier name:
-      = @purchase_order.supplier_name
-
-
-  .large-6.columns
-    %p
-      %b Delivery address:
-      = @purchase_order.delivery_address
+  .large-12.columns
+    = link_to "Download As PDF", purchase_order_path(@purchase_order, format: :pdf), class: :button, onclick: "ga('send', 'event', 'All', 'Download PO');"
+    = link_to "Back", :back
 
 
 
-%table{ style: "width:100%;"}
-  %thead
-    %tr
-      %td Item
-      %td Quantity
-      %td Tax
-      %td Unit Cost
-      %td Total
-
-  - @purchase_order.line_items.each do |line_item|
-    %tr
-      %td
-        = line_item.description
-      %td
-        = line_item.quantity
-      %td
-        = line_item.tax_rate
-      %td
-        = number_to_currency line_item.price
-      %td 
-        = number_to_currency line_item.total
-
-
-  %tfoot
-    %tr
-      %td
-      %td
-      %td
-      %td Total ex Tax
-      %td=  number_to_currency @purchase_order.total
-    %tr
-      %td
-      %td
-      %td
-      %td Total Inc Tax
-      %td= number_to_currency @purchase_order.total_including_tax
+%script
+  ga('send', 'event', 'All', 'Show PO');

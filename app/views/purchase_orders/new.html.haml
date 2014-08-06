@@ -15,49 +15,55 @@
 
 
 
-.row
-	.large-12.columns
-		%h3 How to use this tool
-	.large-6.columns
-		%p
-			Simply enter your details in above and press the 
-			%code Download PDF 
-			button to download your Purchase Order.  You can enter any Purchase Order Number you like and the detail on the purchase order should include your
-			own company name and the name of the person who has raised the purchase order.  
+.panel
+	.row
+		.large-12.columns
+			%h3 How to use this tool
+		.large-6.columns
+			%p
+				Simply enter your details in above and press the 
+				%code Download PDF 
+				button to download your Purchase Order.  You can enter any Purchase Order Number you like and the detail on the purchase order should include your
+				own company name and the name of the person who has raised the purchase order.  
 
-		%h5 Pruchase Order Number
-		%p
-			Enter any unique positive number you like.  Keep a record of your purcahse invoice and send this number to the supplier.  When you receive the goods you can then check the purchase order document against what was delivered.  When the suppliers invoice arrives, you can also check it against what was ordered.
+			%h5 Pruchase Order Number
+			%p
+				Enter any unique positive number you like.  Keep a record of your purcahse invoice and send this number to the supplier.  When you receive the goods you can then check the purchase order document against what was delivered.  When the suppliers invoice arrives, you can also check it against what was ordered.
 
 
-		%h5 Raised By
-		%p
-			Enter your name or the name of the person that has authorized this purchase.  Should there be any queiries on the purchase, this person can be referenced to straighten things out.
+			%h5 Raised By
+			%p
+				Enter your name or the name of the person that has authorized this purchase.  Should there be any queiries on the purchase, this person can be referenced to straighten things out.
 
-	.large-6.columns
-		%h5 Your Company Name
-		%p
-			Supply your companies name so that the supplier knows who they are dealing with when they receive your purchase order.
+		.large-6.columns
+			%h5 Your Company Name
+			%p
+				Supply your companies name so that the supplier knows who they are dealing with when they receive your purchase order.
 
-		%h5 Delivery Address
-		%p
-			Where the ordered goods should be delivered to.  You may want to include a reference number here or instructions on when the items should be delivered.
+			%h5 Delivery Address
+			%p
+				Where the ordered goods should be delivered to.  You may want to include a reference number here or instructions on when the items should be delivered.
 
-		%h5 Items
-		%p
-			There are three spaces here for each of the Purchase Order Item details.  The <code>description</code> should descrive the particular product by name eg:  "Dell XPS 5000".  The <code>Qty</code> field should indicate how many are to be delivered.  If there is a <code>Tax Rate</code> applicable, enter it in the following field.  Finally, put the <code>Unit Price</code> of a single item (no the total cost o all items). 
+			%h5 Items
+			%p
+				There are three spaces here for each of the Purchase Order Item details.  The <code>description</code> should descrive the particular product by name eg:  "Dell XPS 5000".  The <code>Qty</code> field should indicate how many are to be delivered.  If there is a <code>Tax Rate</code> applicable, enter it in the following field.  Finally, put the <code>Unit Price</code> of a single item (no the total cost o all items). 
 
-.row
-	.large-6.columns
-		%h3 About
-		%p
-			This tool is provided free of charge by 
-			%a{ href: "http://www.rubberstamp.io"} RubberStamp.io
-			a powerful online purchase order management solution.  If you are looking for a tool with greater for support for such features as 
-			%ul
-				%li Multi user access and approval process
-				%li Password protection and SSL Security
-				%li Budgeting
-				%li Mobile Access
-				%li Reporting
+	.row
+		.large-6.columns
+			%h3 About
+			%p
+				This tool is provided free of charge by 
+				%a{ href: "http://www.rubberstamp.io"} RubberStamp.io
+				a powerful online purchase order management solution.  If you are looking for a tool with greater for support for such features as 
+				%ul
+					%li Multi user access and approval process
+					%li Password protection and SSL Security
+					%li Budgeting
+					%li Mobile Access
+					%li Reporting
+
+
+
+	%script
+		ga('send', 'event', 'All', 'Landing Page');
 

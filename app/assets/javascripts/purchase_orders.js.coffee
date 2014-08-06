@@ -3,6 +3,7 @@
 
 
 $ ->
+
 	$("#add_another_item").on "click", ->
 		html = $(".line_item").first().html()
 		$(".line_item").append(html)
@@ -15,7 +16,7 @@ $ ->
 window.remove_fields = (link) ->
   $(link).parents(".fields").remove()
   return
-  
+
 window.add_fields = (link, association, content) ->
   new_id = new Date().getTime()
   regexp = new RegExp("new_" + association, "g")

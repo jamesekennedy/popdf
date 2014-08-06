@@ -41,7 +41,8 @@
       %td Item
       %td Quantity
       %td Tax
-      %td Cost
+      %td Unit Cost
+      %td Total
 
   - @purchase_order.line_items.each do |line_item|
     %tr
@@ -53,15 +54,19 @@
         = line_item.tax_rate
       %td
         = number_to_currency line_item.price
+      %td 
+        = number_to_currency line_item.total
 
 
   %tfoot
     %tr
       %td
       %td
+      %td
       %td Total ex Tax
       %td=  number_to_currency @purchase_order.total
     %tr
+      %td
       %td
       %td
       %td Total Inc Tax

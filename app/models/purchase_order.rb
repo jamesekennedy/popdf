@@ -10,7 +10,7 @@ class PurchaseOrder < ActiveRecord::Base
 
   def total
 
-  	line_items.sum(:price)
+  	line_items.sum("price * quantity")
   	
   end
 
@@ -19,7 +19,7 @@ class PurchaseOrder < ActiveRecord::Base
 
   	line_items.each.sum do |li|
 
-  		li.price.to_f * (1 + ( li.tax_rate.to_f / 100 ))
+  		li.quantity * li.price.to_f * (1 + ( li.tax_rate.to_f / 100 ))
 
 
   	end

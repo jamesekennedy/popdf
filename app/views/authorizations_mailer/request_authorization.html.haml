@@ -1,0 +1,13 @@
+%h1 Authorization Request
+
+%p #{@authorization.purchase_order.raised_by} would like you to approve the following purchase order request.  
+
+= link_to purchase_order_url( @authorization.purchase_order) do 
+	#{@authorization.purchase_order.supplier_name}
+	#{@authorization.purchase_order.total}
+
+
+%p
+	To approve this request, click the following link.
+
+= link_to "Authorize", purchase_order_authorization_url( @authorization.purchase_order, @authorization.authorization_key)

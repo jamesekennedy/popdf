@@ -1,0 +1,10 @@
+.row{ style: "margin-top:10px"}
+	.large-offset-3.large-6.columns
+		.panel
+			%label Send an Authorization Request to
+			= form_for @authorization, url: purchase_order_authorizations_path(@purchase_order) do |f|
+				.fields
+					= f.label :email
+					= f.text_field :email, placeholder: "Business Email Address"
+				.actions
+					= f.submit "Send Request", class: :button

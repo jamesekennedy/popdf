@@ -6,7 +6,11 @@ class LineItem < ActiveRecord::Base
 
   def total
 
-  	quantity * ( 1 + (tax_rate) / 100) * price
+  	rate = tax_rate.blank? ? 0 : tax_rate / 100 
+  	quantity * ( 1 + rate ) * price
   	
   end
 end
+
+
+	

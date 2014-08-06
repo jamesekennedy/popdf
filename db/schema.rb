@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140806115559) do
+ActiveRecord::Schema.define(:version => 20140806152841) do
 
   create_table "authorizations", :force => true do |t|
     t.string   "email"
@@ -25,6 +25,15 @@ ActiveRecord::Schema.define(:version => 20140806115559) do
 # Could not dump table "line_items" because of following StandardError
 #   Unknown type 'reference' for column 'purchase_order_id'
 
+  create_table "notes", :force => true do |t|
+    t.string   "content"
+    t.integer  "purchase_order_id"
+    t.datetime "created_at",        :null => false
+    t.datetime "updated_at",        :null => false
+  end
+
+  add_index "notes", ["purchase_order_id"], :name => "index_notes_on_purchase_order_id"
+
   create_table "purchase_orders", :force => true do |t|
     t.integer  "number"
     t.string   "budget"
@@ -35,6 +44,7 @@ ActiveRecord::Schema.define(:version => 20140806115559) do
     t.datetime "created_at",        :null => false
     t.datetime "updated_at",        :null => false
     t.string   "status"
+    t.string   "conversation_key"
   end
 
 end

@@ -1,4 +1,6 @@
 Pdfpo::Application.routes.draw do
+  post "webhooks/postmark"
+
   resources :purchase_orders do
     resources :authorizations
   end

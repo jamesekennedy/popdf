@@ -89,6 +89,10 @@
         %td= number_to_currency @purchase_order.total_including_tax
 
 
+.row
+  .large-12.columns
+  - @purchase_order.notes.each do |note|
+    .panel= note.content
 
 .row
   .large-12.columns

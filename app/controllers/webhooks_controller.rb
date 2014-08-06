@@ -27,7 +27,11 @@ class WebhooksController < ApplicationController
       MESSAGE
       new_note = purchase_order.notes.new content: message
 
-      render json: purchase_order
+      if new_note.save
+	      render json: purchase_order
+	    else
+	    	render json: {message: "Could not save note"}
+	    end
     else
 
       render json: {message: "Unable to find purchase order "}, status: 200

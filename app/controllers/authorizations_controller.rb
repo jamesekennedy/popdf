@@ -5,7 +5,7 @@ class AuthorizationsController < ApplicationController
 
 		if auth = Authorization.find_by_authorization_key( params[:id] )
 			po = auth.purchase_order
-			po.update_attributes status: "Approved"
+			po.update_attributes status: params[:status]
 			auth.update_attributes authorized: true
 			redirect_to purchase_order_path( auth.purchase_order ), notice: "Purchase Order Approved"
 		else

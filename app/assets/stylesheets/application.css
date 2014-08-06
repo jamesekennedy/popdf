@@ -21,6 +21,7 @@ html body, .container {
 #banner {
 	padding: 1em;
 	background-color: #596885;
+	margin-bottom:10px;
 }
 #banner h1 {
 	color: white;

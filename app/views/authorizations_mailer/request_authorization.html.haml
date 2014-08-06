@@ -10,4 +10,11 @@
 %p
 	To approve this request, click the following link.
 
-= link_to "Authorize", purchase_order_authorization_url( @authorization.purchase_order, @authorization.authorization_key)
+= link_to "Authorize", purchase_order_authorization_url( @authorization.purchase_order, @authorization.authorization_key, status: "Authorized")
+%br/
+%br/
+= link_to "Decline", purchase_order_authorization_url( @authorization.purchase_order, @authorization.authorization_key, status: "Declined")
+
+
+%p
+	To add a comment on this purchase order or ask a question, just hit reply.

@@ -43,7 +43,9 @@ class PurchaseOrdersController < ApplicationController
 
     @purchase_order.line_items.clear
 
-    @purchase_order.line_items.build
+    3.times do 
+      @purchase_order.line_items.build
+    end
 
 
     respond_to do |format|

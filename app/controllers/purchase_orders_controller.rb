@@ -3,7 +3,7 @@ class PurchaseOrdersController < ApplicationController
   # GET /purchase_orders.json
 
   def index
-    @purchase_orders = PurchaseOrder.last(20).order("id desc")
+    @purchase_orders = PurchaseOrder.all
 
 
 

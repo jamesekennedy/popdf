@@ -6,6 +6,9 @@ class AuthorizationsController < ApplicationController
 		if auth = Authorization.find_by_authorization_key( params[:id] )
 			po = auth.purchase_order
 			po.update_attributes status: params[:status]
+
+			AuthorizationsMailer.notify_update_to_purchase_order( auth ).deliver!
+
 			auth.update_attributes authorized: true
 			auth.purchase_order.notes.create content: "Updated to #{params[:status]} by #{auth.email}"
 			redirect_to purchase_order_path( auth.purchase_order ), notice: "Purchase Order Approved"

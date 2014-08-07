@@ -2,9 +2,35 @@
 
 %p #{@authorization.purchase_order.raised_by} would like you to approve the following purchase order request.  
 
+%label Supplier
+= @authorization.purchase_order.supplier_name
+%table
+	%thead
+		%tr
+			%td
+				Item
+			%td 
+				Units
+			%td Unit Cost
+			%td Total
+	%tbody{ style: "width:100px"}
+		- @authorization.purchase_order.line_items.each do |li|
+			%tr
+				%td= li.description
+				%td= li.quantity
+				%td= li.price
+				%td= li.total
+	}
+	%tfoot
+		%tr
+			%td
+			%td
+			%td Total ex Tax
+			%td= @authorization.purchase_order.total
+
+
 = link_to purchase_order_url( @authorization.purchase_order) do 
-	#{@authorization.purchase_order.supplier_name}
-	#{@authorization.purchase_order.total}
+	More Details
 
 
 %p

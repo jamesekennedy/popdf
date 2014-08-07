@@ -7,6 +7,7 @@ class AuthorizationsController < ApplicationController
 			po = auth.purchase_order
 			po.update_attributes status: params[:status]
 			auth.update_attributes authorized: true
+			auth.purchase_order.notes.create content: "Updated to #{params[:status]} by #{auth.email}"
 			redirect_to purchase_order_path( auth.purchase_order ), notice: "Purchase Order Approved"
 		else
 			render file: "#{Rails.root}/public/404.html", status: 404

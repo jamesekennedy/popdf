@@ -1,9 +1,12 @@
 class PurchaseOrdersController < ApplicationController
   # GET /purchase_orders
   # GET /purchase_orders.json
-  
+
   def index
     @purchase_orders = PurchaseOrder.all
+
+
+
 
     respond_to do |format|
       format.html # index.html.erb
@@ -60,6 +63,8 @@ class PurchaseOrdersController < ApplicationController
 
     @purchase_order = PurchaseOrder.new(params[:purchase_order])
     @purchase_order.status = "Not Authorized"
+
+    @purchase_order.line_items = @purchase_order.line_items.select do |li| li.description.present? end
 
     session[:preset] = params[:purchase_order]
 

@@ -3,10 +3,7 @@ class PurchaseOrdersController < ApplicationController
   # GET /purchase_orders.json
 
   def index
-    @purchase_orders = PurchaseOrder.all
-
-
-
+    @purchase_orders = PurchaseOrder.last(10)
 
     respond_to do |format|
       format.html # index.html.erb

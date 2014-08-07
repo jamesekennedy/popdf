@@ -4,6 +4,11 @@
 
 $ ->
 
+
+  $("#download_pdf_link").on "click", ->
+    alert "fuck"
+    ga("send", "event", "All", "Clicked Download Link")
+
 	$("#add_another_item").on "click", ->
 		html = $(".line_item").first().html()
 		$(".line_item").append(html)

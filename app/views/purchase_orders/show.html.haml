@@ -1,11 +1,13 @@
 .row
-  .large-8.columns
+  .large-9.columns
     .panel
       = render "purchase_order_detail"
-  .large-4.columns
-    .panel
+  .large-3.columns
+    .xpanel
+      %br/
       = link_to "Download As PDF", purchase_order_path(@purchase_order, format: :pdf), disabled: disable_download(@purchase_order), class: "button #{class_for(@purchase_order)}"
       = link_to "Request Approval", new_purchase_order_authorization_path( @purchase_order ), class: "button secondary"
+      = link_to "New Purchase Order", new_purchase_order_path, class: "button secondary"
       = link_to "Back", :back
 
 

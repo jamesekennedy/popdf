@@ -6,7 +6,6 @@ $ ->
 
 
   $("#download_pdf_link").on "click", ->
-    alert "fuck"
     ga("send", "event", "All", "Clicked Download Link")
 
 	$("#add_another_item").on "click", ->

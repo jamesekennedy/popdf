@@ -64,7 +64,9 @@ class PurchaseOrdersController < ApplicationController
     @purchase_order = PurchaseOrder.new(params[:purchase_order])
     @purchase_order.status = "Not Authorized"
 
-    @purchase_order.line_items = @purchase_order.line_items.select do |li| li.description.present? end
+    unless @purchase_order.line_items.count == 1
+      @purchase_order.line_items = @purchase_order.line_items.select do |li| li.description.present? end
+    end
 
     session[:preset] = params[:purchase_order]
 

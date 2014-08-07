@@ -12,3 +12,20 @@ module PurchaseOrdersHelper
   end
  
 end
+
+
+def class_for(purchase_order)
+
+
+end
+
+
+def disable_download po
+
+	if po.status == "Authorized"
+		false
+	else
+		true
+	end
+	
+end

@@ -1,7 +1,15 @@
 .row
-  .large-12.columns
+  .large-8.columns
     .panel
       = render "purchase_order_detail"
+  .large-4.columns
+    .panel
+      = link_to "Download As PDF", purchase_order_path(@purchase_order, format: :pdf), disabled: disable_download(@purchase_order), class: "button #{class_for(@purchase_order)}"
+      = link_to "Request Approval", new_purchase_order_authorization_path( @purchase_order ), class: "button secondary"
+      = link_to "Back", :back
+
+
+
 
 - unless @purchase_order.notes.empty?
   .row
@@ -12,11 +20,7 @@
 
 .row
   .large-12.columns
-    = link_to "Download As PDF", purchase_order_path(@purchase_order, format: :pdf), class: :button, onclick: "ga('send', 'event', 'All', 'Download PO');"
-    = link_to "Request Approval", new_purchase_order_authorization_path( @purchase_order ), class: "button secondary"
-    = link_to "Back", :back
-
-
+ 
 
 %script
   ga('send', 'event', 'All', 'Show PO');

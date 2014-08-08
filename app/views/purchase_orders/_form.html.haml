@@ -15,11 +15,14 @@
         = f.label :raised_by
         = f.text_field :raised_by
       .field
+        = f.label :phone_number, "Your Contact Number"
+        = f.text_field :phone_number
+      .field
         = f.label :your_company_name
         = f.text_field :your_company_name
-      .field
-        = f.label :delivery_address
-        = f.text_area :delivery_address
+      / .field
+      / = f.label :delivery_address
+      / = f.text_area :delivery_address
       .field
         = f.label :supplier_name
         = f.text_field :supplier_name
@@ -29,6 +32,9 @@
         = render partial: "line_item" , locals: { f: li }
     .large-12.columns
       .right= link_to_add_fields "Add Line", f, :line_items
+    .large-12.columns
+      = f.label :notes
+      = f.text_area :notes
 
       .actions
         %br/

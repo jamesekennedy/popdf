@@ -4,7 +4,7 @@ class PurchaseOrder < ActiveRecord::Base
   has_many :authorizations
   has_many :notes
 
-  attr_accessible :budget, :delivery_address, :number, :raised_by, :supplier_name, :your_company_name, :line_items_attributes, :status, :conversation_key
+  attr_accessible :budget, :delivery_address, :number, :raised_by, :supplier_name, :your_company_name, :line_items_attributes, :status, :conversation_key, :phone_number, :notes
 
 
   before_create :generate_conversation_key

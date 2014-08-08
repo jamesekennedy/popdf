@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140808103623) do
+ActiveRecord::Schema.define(:version => 20140808110233) do
 
   create_table "authorizations", :force => true do |t|
     t.string   "email"
@@ -47,7 +47,7 @@ ActiveRecord::Schema.define(:version => 20140808103623) do
     t.string   "status"
     t.string   "conversation_key"
     t.string   "phone_number"
-    t.text     "note"
+    t.text     "notes"
   end
 
 end

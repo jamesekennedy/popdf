@@ -7,7 +7,21 @@
 %br/
 
 .row
-  .large-6.columns
+  .large-12.columns
+    %p
+      %b Status:
+      = @purchase_order.status
+      - if @purchase_order.status == "Not Authorized"
+        - auths = @purchase_order.authorizations
+        - unless auths.empty?
+          = ":"
+          Waiting for approval from #{auths.collect do |a| a.email end.uniq.to_sentence}
+
+        = link_to "Request Approval", new_purchase_order_authorization_path( @purchase_order )
+      - else
+        = "by #{@purchase_order.authorizations.where( authorized: true).collect do |a| a.email end.uniq.to_sentence }"
+
+
     %p
       %b PO #:
       = @purchase_order.number
@@ -46,15 +60,15 @@
 
   - @purchase_order.line_items.each do |line_item|
     %tr
-      %td
+      %td{ width: "50%"}
         = line_item.description
-      %td
+      %td{ width: "10%"}
         = line_item.quantity
-      %td
+      %td{ width: "10%"}
         = line_item.tax_rate
-      %td
+      %td{ width: "10%"}
         = number_to_currency line_item.price
-      %td 
+      %td{ width: "10%" }
         = number_to_currency line_item.total
 
 
@@ -62,12 +76,17 @@
     %tr
       %td
       %td
-      %td
-      %td Total ex Tax
+      %td{ colspan: 2} Total ex Tax
       %td=  number_to_currency @purchase_order.total
     %tr
       %td
       %td
-      %td
-      %td Total Inc Tax
+      %td{ colspan: 2} Total Inc Tax
       %td= number_to_currency @purchase_order.total_including_tax
+
+.row
+  .large-12.columns
+    %label Notes
+    %p#note
+      = "None" if @purchase_order.note.blank?
+      = @purchase_order.note 

@@ -107,4 +107,13 @@ class PurchaseOrdersController < ApplicationController
       format.json { head :no_content }
     end
   end
+
+
+
+  def edit
+
+    @purchase_order = PurchaseOrder.find params[:id]
+    
+    
+  end
 end

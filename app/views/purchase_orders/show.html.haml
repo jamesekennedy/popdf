@@ -7,6 +7,7 @@
       %br/
       = link_to "Download As PDF", purchase_order_path(@purchase_order, format: :pdf), class: "button expand", id: "download_pdf_link"
       = link_to "Request Approval", new_purchase_order_authorization_path( @purchase_order ), class: "button secondary expand"
+      = link_to "Edit Purchase Order", edit_purchase_order_path( @purchase_order ), class: "button secondary expand"
       = link_to "New Purchase Order", new_purchase_order_path, class: "button secondary expand"
       = link_to "Back", :back
 

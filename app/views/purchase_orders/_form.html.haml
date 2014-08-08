@@ -33,8 +33,8 @@
     .large-12.columns
       .right= link_to_add_fields "Add Line", f, :line_items
     .large-12.columns
-      = f.label :notes
-      = f.text_area :notes
+      = f.label :note, "Additional Notes"
+      = f.text_area :note
 
       .actions
         %br/

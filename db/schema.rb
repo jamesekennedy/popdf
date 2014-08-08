@@ -47,7 +47,7 @@ ActiveRecord::Schema.define(:version => 20140808103623) do
     t.string   "status"
     t.string   "conversation_key"
     t.string   "phone_number"
-    t.text     "notes"
+    t.text     "note"
   end
 
 end

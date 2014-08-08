@@ -2,7 +2,7 @@
 %table
   %tr
     %th Number
-    %th Budget
+    %th Phone Number
     %th Raised by
     %th Your company name
     %th Delivery address
@@ -14,7 +14,7 @@
   - @purchase_orders.each do |purchase_order|
     %tr
       %td= purchase_order.number
-      %td= purchase_order.budget
+      %td= purchase_order.phone_number
       %td= purchase_order.raised_by
       %td= purchase_order.your_company_name
       %td= purchase_order.delivery_address

@@ -113,7 +113,15 @@ class PurchaseOrdersController < ApplicationController
   def edit
 
     @purchase_order = PurchaseOrder.find params[:id]
-    
+
+    if @purchase_order.line_items.empty?
+      3.times do @purchase_order.line_items.build end
+    end
+
+
+
+
+
     
   end
 end

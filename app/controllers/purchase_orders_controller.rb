@@ -3,6 +3,8 @@ class PurchaseOrdersController < ApplicationController
   # GET /purchase_orders.json
 
   def index
+
+    render file: "#{Rails.root}/public/404.html" unless params[:secure].present?
     @purchase_orders = PurchaseOrder.last(10)
 
     respond_to do |format|

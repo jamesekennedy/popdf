@@ -28,6 +28,10 @@ class WebhooksController < ApplicationController
 
       if new_note.save
 	      render json: purchase_order
+        # Okay now lets email everyone that there was a new note.
+
+        recipient_emails = purchase_order
+        PurchaseOrderMailer.notify_of_update(recipient_emails , new_note).deliver!
 	    else
 	    	render json: {message: "Could not save note"}
 	    end

@@ -43,7 +43,7 @@ class PurchaseOrdersController < ApplicationController
     @purchase_order.line_items.clear
 
     3.times do 
-      @purchase_order.line_items.build
+      @purchase_order.line_items.build quantity: 1
     end
 
 
@@ -117,7 +117,7 @@ class PurchaseOrdersController < ApplicationController
     @purchase_order = PurchaseOrder.find params[:id]
 
     if @purchase_order.line_items.empty?
-      3.times do @purchase_order.line_items.build end
+      3.times do @purchase_order.line_items.build( quantity: 1) end
     end
 
 

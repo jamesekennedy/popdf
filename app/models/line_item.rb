@@ -5,7 +5,9 @@ class LineItem < ActiveRecord::Base
 
 
 
+
   validates :price, presence: true
+  validates :quantity, presence: true
   validates :description, presence: true
   def total
 

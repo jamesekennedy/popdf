@@ -8,18 +8,6 @@
 
 .row
   .large-12.columns
-    %p
-      %b Status:
-      = @purchase_order.status
-      - if @purchase_order.status == "Not Authorized"
-        - auths = @purchase_order.authorizations
-        - unless auths.empty?
-          = ":"
-          Waiting for approval from #{auths.collect do |a| a.email end.uniq.to_sentence}
-
-        = link_to "Request Approval", new_purchase_order_authorization_path( @purchase_order )
-      - else
-        = "by #{@purchase_order.authorizations.where( authorized: true).collect do |a| a.email end.uniq.to_sentence }"
 
 
     %p

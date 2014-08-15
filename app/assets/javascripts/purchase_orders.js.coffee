@@ -6,7 +6,7 @@ $ ->
 
 
   $("#download_pdf_link").on "click", ->
-    ga("send", "event", "All", "Clicked Download Link")
+    ga("Clicked Download Link")
 
 	$("#add_another_item").on "click", ->
 		html = $(".line_item").first().html()

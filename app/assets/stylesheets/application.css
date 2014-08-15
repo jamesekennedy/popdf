@@ -27,3 +27,12 @@ html body, .container {
 	color: white;
 }
 
+.signature_label {
+	
+	margin-top:2em;
+}
+#signature_line {
+	margin-top:3em;
+	border-bottom: solid 1px black;
+}
+

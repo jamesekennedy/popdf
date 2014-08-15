@@ -1,7 +1,7 @@
 %h1 
   Purchase Order
 .small
-  = @purchase_order.raised_by
+  %strong= @purchase_order.your_company_name
   = @purchase_order.delivery_address
 
 %br/
@@ -11,29 +11,31 @@
 
 
     %p
-      %b PO #:
+      %label PO #:
       = @purchase_order.number
       = @purchase_order.budget
 .row
   .large-6.columns
-    %p
-      %b Raised by:
+
+    %p 
+      %label Raise by
       = @purchase_order.raised_by
-  .large-6.columns
     %p
-      %b Company name:
-      = @purchase_order.your_company_name
-.row
+      %label Phone:
+      = @purchase_order.phone_number
+
+    %p
+      %label Email:
+      = @purchase_order.phone_number
+
+
+
   .large-6.columns
     %p
       %b Supplier name:
       = @purchase_order.supplier_name
 
-
-  .large-6.columns
-    %p
-      %b Delivery address:
-      = @purchase_order.delivery_address
+  
 
 
 
@@ -78,3 +80,16 @@
     %p#note
       = "None" if @purchase_order.note.blank?
       = @purchase_order.note 
+
+.row
+  .large-2.columns.signature_label
+    %label Signed By
+  .large-4.columns
+    #signature_line
+
+  .large-2.columns.signature_label
+    %label Date
+  .large-4.columns
+    #signature_line
+
+

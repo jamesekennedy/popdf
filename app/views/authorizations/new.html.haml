@@ -10,3 +10,7 @@
 					= f.text_field :email, placeholder: "The Approvers Email Address"
 				.actions
 					= f.submit "Send Request", class: :button
+
+
+%script
+	analytics.track("New Authorisation Page")

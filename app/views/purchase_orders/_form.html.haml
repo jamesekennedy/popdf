@@ -7,10 +7,19 @@
           - @purchase_order.errors.full_messages.each do |msg|
             %li= msg
 
-    .large-6.columns
+    .large-12.columns
       .field
         = f.label :number, "Purchase Order Number"
         = f.number_field :number
+    .large-6.columns
+      
+      %h6 Your Company Details
+      .field
+        = f.label :your_company_name, "Company Name"
+        = f.text_field :your_company_name
+      .field
+        = f.label :delivery_address
+        = f.text_area :delivery_address
       .field
         = f.label :raised_by
         = f.text_field :raised_by
@@ -18,11 +27,11 @@
         = f.label :phone_number, "Your Contact Number"
         = f.text_field :phone_number
       .field
-        = f.label :your_company_name
-        = f.text_field :your_company_name
-      .field
-        = f.label :delivery_address
-        = f.text_area :delivery_address
+        = f.label :email, "Contact Email"
+        = f.text_field :email
+      
+    .large-6.columns
+      %h6 Supplier Details
       .field
         = f.label :supplier_name
         = f.text_field :supplier_name

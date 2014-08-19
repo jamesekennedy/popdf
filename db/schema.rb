@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140815152748) do
+ActiveRecord::Schema.define(:version => 20140819143724) do
 
 # Could not dump table "authentications" because of following StandardError
 #   Unknown type 'hstore' for column 'extra'
@@ -27,12 +27,12 @@ ActiveRecord::Schema.define(:version => 20140815152748) do
   end
 
   create_table "line_items", :force => true do |t|
-    t.string   "description"
+    t.text     "description",       :limit => 255
     t.integer  "quantity"
     t.integer  "tax_rate"
     t.decimal  "price"
-    t.datetime "created_at",        :null => false
-    t.datetime "updated_at",        :null => false
+    t.datetime "created_at",                       :null => false
+    t.datetime "updated_at",                       :null => false
     t.integer  "purchase_order_id"
   end
 

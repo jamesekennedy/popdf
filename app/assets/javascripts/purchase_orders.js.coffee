@@ -5,8 +5,8 @@
 $ ->
 
 
-  $("#download_pdf_link").on "click", ->
-    window.analytics.track("Clicked Download Link")
+  $(".track_clicks").on "click", ->
+    window.analytics.track("Clicked #{$(this).html()}");
 
 
 	$("#add_another_item").on "click", ->

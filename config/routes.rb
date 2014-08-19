@@ -3,6 +3,9 @@ Pdfpo::Application.routes.draw do
 
   resources :purchase_orders do
     resources :authorizations
+    member do 
+      post "email"
+    end
   end
 
 

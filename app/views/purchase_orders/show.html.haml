@@ -5,14 +5,27 @@
   .large-3.columns
     .xpanel
       %br/
-      = link_to "Download As PDF", purchase_order_path(@purchase_order, format: :pdf), class: "button expand", id: "download_pdf_link"
-      = link_to "Request Approval", new_purchase_order_authorization_path( @purchase_order ), class: "button secondary expand"
-      = link_to "Edit Purchase Order", edit_purchase_order_path( @purchase_order ), class: "button secondary expand"
-      = link_to "New Purchase Order", new_purchase_order_path, class: "button secondary expand"
+      = link_to "Download As PDF", purchase_order_path(@purchase_order, format: :pdf), class: "button expand track_clicks", id: "download_pdf_link"
+      = link_to "Request Approval", new_purchase_order_authorization_path( @purchase_order ), class: "button secondary expand track_clicks"
+      = link_to "Edit Purchase Order", edit_purchase_order_path( @purchase_order ), class: "button secondary expand track_clicks"
+      = link_to "New Purchase Order", new_purchase_order_path, class: "button secondary expand track_clicks"
+      %a.button.secondary.expand.track_clicks{ href: "javascript:void", "data-reveal-id" => "email_purcahse_order"} Email Purchase Order
       = link_to "Back", :back
 
 
 
+#email_purcahse_order.reveal-modal{ "reveal-modal" => true}
+  .row
+    .offset-large-3.large-6.columns
+      = form_tag  email_purchase_order_path(@purchase_order) do
+        %label Recipient
+        = text_field_tag :recipient
+        %label Message
+        = text_area_tag :message
+        .actions
+          = submit_tag "Send", class: :button
+
+  
 
 - unless @purchase_order.notes.empty?
   .row

@@ -31,6 +31,15 @@ class PurchaseOrdersController < ApplicationController
     end
   end
 
+
+  def email
+
+    @purchase_order = PurchaseOrder.find params[:id]
+    PurchaseOrderMailer.send_email( params[:recipient], params[:message], @purchase_order).deliver!
+    flash[:notice] = "Purchase Order Emailed"
+    redirect_to purchase_order_path(@purchase_order)
+    
+  end
   # GET /purchase_orders/new
   # GET /purchase_orders/new.json
   def new

@@ -27,7 +27,8 @@ class AuthorizationsController < ApplicationController
 		auth = @purchase_order.authorizations.create params[:authorization]
 		AuthorizationsMailer.request_authorization( auth ).deliver!
 		
-		redirect_to purchase_order_path @purchase_order, notice: "Request sent to #{auth.email}"
+    flash[:success] = "Authorisation Request Sent"
+		redirect_to purchase_order_path @purchase_order
 	end
 
 

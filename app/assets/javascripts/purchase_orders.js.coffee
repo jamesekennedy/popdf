@@ -6,7 +6,7 @@ $ ->
 
 
   $("#download_pdf_link").on "click", ->
-    ga("Clicked Download Link")
+    window.analytics.track("Clicked Download Link")
 
 	$("#add_another_item").on "click", ->
 		html = $(".line_item").first().html()
@@ -16,6 +16,8 @@ $ ->
 		$(this).parents(".line_item").remove()
 
 
+ $(".alert-box").each  ->
+  window.analytics.track( $(this).html() )
 
 window.remove_fields = (link) ->
   $(link).parents(".fields").remove()

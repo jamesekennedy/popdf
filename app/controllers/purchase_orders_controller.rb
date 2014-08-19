@@ -18,6 +18,7 @@ class PurchaseOrdersController < ApplicationController
   def show
     @purchase_order = PurchaseOrder.find(params[:id])
 
+
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @purchase_order }
@@ -33,6 +34,7 @@ class PurchaseOrdersController < ApplicationController
   # GET /purchase_orders/new
   # GET /purchase_orders/new.json
   def new
+
     @purchase_order = PurchaseOrder.new session[:preset]
 
     session[:last_purchase_order_number] ||= 0
@@ -48,7 +50,7 @@ class PurchaseOrdersController < ApplicationController
 
 
     respond_to do |format|
-      format.html # new.html.erb
+      format.html 
       format.json { render json: @purchase_order }
     end
   end

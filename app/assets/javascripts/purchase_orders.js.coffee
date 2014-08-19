@@ -6,7 +6,6 @@ $ ->
 
 
   $("#download_pdf_link").on "click", ->
-    alert "wtf"
     window.analytics.track("Clicked Download Link")
 
 

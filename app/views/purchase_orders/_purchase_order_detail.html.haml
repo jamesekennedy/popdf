@@ -42,14 +42,16 @@
 %table{ style: "width:100%;"}
   %thead
     %tr
+      %td #
       %td Item
       %td Quantity
       %td Tax
       %td Unit Cost
       %td Total
 
-  - @purchase_order.line_items.each do |line_item|
+  - @purchase_order.line_items.each_with_index do |line_item, index|
     %tr
+      %td= index + 1
       %td{ width: "50%"}
         = line_item.description
       %td{ width: "10%"}

@@ -36,7 +36,7 @@ class PurchaseOrdersController < ApplicationController
 
     @purchase_order = PurchaseOrder.find params[:id]
     PurchaseOrderMailer.send_email( params[:recipient], params[:message], @purchase_order).deliver!
-    flash[:notice] = "Purchase Order Emailed"
+    flash[:success] = "Purchase Order Emailed"
     redirect_to purchase_order_path(@purchase_order)
     
   end

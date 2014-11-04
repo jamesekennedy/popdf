@@ -40,5 +40,8 @@
 
 %script
   analytics.track("Show PO")
+  - unless @purchase_order.email.blank?
+    - props = { "Phone Number" => @purchase_order.phone_number, name: @purchase_order.raised_by }
+    analytics.identify("#{@purchase_order.email}", #{raw props.to_json});
 
 = render partial: "/layouts/adwords_conversion"

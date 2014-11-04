@@ -38,7 +38,7 @@
     .large-12.columns
       %h3 Items
       = f.fields_for :line_items do |li|
-        = render partial: "line_item" , locals: { f: li }
+        = render "line_item" , f: li
     .large-12.columns
       .right= link_to_add_fields "Add Line", f, :line_items
     .large-12.columns

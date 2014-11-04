@@ -13,4 +13,6 @@ class PurchaseOrderMailer < ActionMailer::Base
 
     mail to: recipient, subject:  "Purchase Order #{purchase_order.number} from #{purchase_order.your_company_name}"
   end
+
+
 end

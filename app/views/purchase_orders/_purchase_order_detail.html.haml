@@ -59,9 +59,9 @@
       %td{ width: "10%"}
         = line_item.tax_rate
       %td{ width: "10%"}
-        = number_to_currency line_item.price
+        = number_to_currency line_item.price, unit: default_currency
       %td{ width: "10%" }
-        = number_to_currency line_item.total
+        = number_to_currency line_item.total, unit: default_currency
 
 
   %tfoot
@@ -69,12 +69,12 @@
       %td
       %td
       %td{ colspan: 2} Total ex Tax
-      %td=  number_to_currency @purchase_order.total
+      %td=  number_to_currency @purchase_order.total, unit: default_currency
     %tr
       %td
       %td
       %td{ colspan: 2} Total Inc Tax
-      %td= number_to_currency @purchase_order.total_including_tax
+      %td= number_to_currency @purchase_order.total_including_tax, unit: default_currency
 
 .row
   .large-12.columns

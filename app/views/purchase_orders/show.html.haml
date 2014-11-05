@@ -10,6 +10,15 @@
       = link_to "Edit Purchase Order", edit_purchase_order_path( @purchase_order ), class: "button secondary expand track_clicks"
       = link_to "New Purchase Order", new_purchase_order_path, class: "button secondary expand track_clicks"
       %a.button.secondary.expand.track_clicks{ href: "javascript:void", "data-reveal-id" => "email_purcahse_order"} Email Purchase Order
+
+      %dl.sub-nav
+        %dt Currency
+        %dd{ class: default_currency == "$" ? "active" : ""}
+          %a{href: "?currency=$"} $
+        %dd{ class: default_currency == "&pound" ? "active" : ""}
+          = link_to "&pound;".html_safe, "?currency=%26pound;"
+
+
       = link_to "Back", :back
 
 

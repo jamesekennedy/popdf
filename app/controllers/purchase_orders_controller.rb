@@ -5,7 +5,7 @@ class PurchaseOrdersController < ApplicationController
   def index
 
     render file: "#{Rails.root}/public/404.html" unless params[:secure].present?
-    @purchase_orders = PurchaseOrder.last(10)
+    @purchase_orders = PurchaseOrder.last(30)
 
     respond_to do |format|
       format.html # index.html.erb
@@ -25,7 +25,7 @@ class PurchaseOrdersController < ApplicationController
       format.pdf do
         # headers['Content-Disposition'] = "attachment; filename=#{@purchase_order.to_label}"
       
-        pdf = render pdf: "show"
+        pdf = render pdf: "show", formats: :html, encoding: 'utf8'
 
       end
     end

@@ -1,0 +1,122 @@
+Last login: Fri Oct 10 10:25:21 on ttys002
+RVM used your Gemfile for selecting Ruby, it is all fine - Heroku does that too,
+you can ignore these warnings with 'rvm rvmrc warning ignore /Users/jameskennedy/workspace/po-app/Gemfile'.
+To ignore the warning for all files run 'rvm rvmrc warning ignore allGemfiles'.
+
+
+Jamess-MacBook-Air:po-app jameskennedy$ 
+Jamess-MacBook-Air:po-app jameskennedy$ 
+Jamess-MacBook-Air:po-app jameskennedy$ pwd
+/Users/jameskennedy/workspace/po-app
+Jamess-MacBook-Air:po-app jameskennedy$ git branch
+  add_nigerian_currency
+  budget-in-dashboard-and-export-numbers-instead-of-currency
+  budget_approvers
+  custom_fields_on_purchase_orders
+  default_tax_rate_on_company
+  delivery_date
+  heroku
+* in_place_editing
+  issue-76-excel-numbers
+  line-item-custom-fields
+  line_item_quantity
+  mail_interceptor_for_staging_and_development
+  master
+  multi-line-po
+  multiple_approvers
+  ou_switching
+  sharable-po
+  simpler_permissions
+Jamess-MacBook-Air:po-app jameskennedy$ 
+Jamess-MacBook-Air:po-app jameskennedy$ 
+Jamess-MacBook-Air:po-app jameskennedy$ pwd
+/Users/jameskennedy/workspace/po-app
+Jamess-MacBook-Air:po-app jameskennedy$ git branch
+  add_nigerian_currency
+  budget-in-dashboard-and-export-numbers-instead-of-currency
+  budget_approvers
+  custom_fields_on_purchase_orders
+  default_tax_rate_on_company
+  delivery_date
+  heroku
+* in_place_editing
+  issue-76-excel-numbers
+  line-item-custom-fields
+  line_item_quantity
+  mail_interceptor_for_staging_and_development
+  master
+  multi-line-po
+  multiple_approvers
+  ou_switching
+  sharable-po
+  simpler_permissions
+Jamess-MacBook-Air:po-app jameskennedy$ git checkout simpler_permissions
+error: Your local changes to the following files would be overwritten by checkout:
+	Gemfile
+	Gemfile.lock
+Please, commit your changes or stash them before you can switch branches.
+Aborting
+Jamess-MacBook-Air:po-app jameskennedy$ vi Gemfile
+Jamess-MacBook-Air:po-app jameskennedy$ vi Gemfile
+
+source 'https://rubygems.org'
+ruby '2.0.0'
+
+gem 'rails', '4.1.0'
+gem 'sass-rails', '~> 4.0.0'
+gem 'uglifier', '>= 1.3.0'
+gem 'coffee-rails', '~> 4.0.0'
+gem 'jquery-rails'
+gem 'turbolinks'
+gem 'jbuilder', '~> 1.2'
+gem 'devise'
+gem 'rolify', :git => 'https://github.com/jdrago999/rolify.git'
+gem 'simple_form'
+gem 'high_voltage', '~> 2.1'
+gem 'haml-rails'
+gem 'foundation-rails'
+gem 'compass-rails'
+gem 'foundation-icons-sass-rails'
+gem 'font-awesome-rails'
+gem 'active_link_to'
+gem 'premailer-rails'
+gem 'nokogiri'
+gem 'wicked'
+gem 'sidekiq'
+gem 'sinatra', require: false
+gem 'slim'
+gem 'devise-async'
+gem 'redis'
+gem 'redis-namespace', '~> 1.4.1'
+gem 'spreadsheet'
+gem 'kaminari'
+gem 'ey_config'
+gem 'newrelic_rpm'
+gem 'pundit'
+gem 'delayed_paperclip'
+gem 'aws-sdk'
+gem 'airbrake'
+gem 'capistrano'
+gem 'postmark-rails', '~> 0.8.0'
+gem 'cocoon'
+
+group :development do
+  gem 'sqlite3'
+  # gem 'debugger'
+  gem 'better_errors'
+  gem 'binding_of_caller', :platforms=>[:mri_19, :mri_20, :rbx]
+  gem 'quiet_assets'
+  gem 'rails_layout'
+  gem 'spring'
+  gem 'guard'
+  gem 'guard-test'
+end
+
+group :development, :test, :staging do
+  gem 'thin'
+  gem 'factory_girl_rails', :require => false
+  gem 'capybara'
+  gem 'cucumber-rails', :require => false
+  gem 'database_cleaner'
+  gem 'rspec-rails'
+

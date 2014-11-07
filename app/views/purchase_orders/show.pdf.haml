@@ -7,13 +7,15 @@
 %br/
 
 .row
-  .large-12.columns
-
-
+  .large-6.columns
     %p
       %label PO #:
       = @purchase_order.number
       = @purchase_order.budget
+  .large-5.columns
+    %p
+      %label Date:
+      = @purchase_order.date
 .row
   .large-6.columns
 

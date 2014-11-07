@@ -7,10 +7,15 @@
           - @purchase_order.errors.full_messages.each do |msg|
             %li= msg
 
-    .large-12.columns
+    .large-6.columns
       .field
         = f.label :number, "Purchase Order Number"
         = f.number_field :number
+    .large-6.columns
+      .field
+        = f.label :date
+        = f.text_field :date, data: {type: :date}
+
     .large-6.columns
       
       %h6 Your Company Details

@@ -57,6 +57,8 @@ class PurchaseOrdersController < ApplicationController
       @purchase_order.line_items.build quantity: 1
     end
 
+    @purchase_order.date = Date.today
+
 
     respond_to do |format|
       format.html 

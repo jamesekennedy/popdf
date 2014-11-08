@@ -13,9 +13,6 @@
 
 ActiveRecord::Schema.define(:version => 20141107102150) do
 
-# Could not dump table "authentications" because of following StandardError
-#   Unknown type 'hstore' for column 'extra'
-
   create_table "authorizations", :force => true do |t|
     t.string   "email"
     t.string   "authorization_key"
@@ -60,12 +57,6 @@ ActiveRecord::Schema.define(:version => 20141107102150) do
     t.text     "note"
     t.string   "email"
     t.text     "date"
-  end
-
-  create_table "users", :force => true do |t|
-    t.string   "name"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
   end
 
 end

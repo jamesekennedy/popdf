@@ -17,6 +17,8 @@
           %a{href: "?currency=$"} $
         %dd{ class: default_currency == "&pound;" ? "active" : ""}
           = link_to "&pound;".html_safe, "?currency=#{CGI.escape "&pound;"}"
+        %dd{ class: default_currency == "&euro;" ? "active" : ""}
+          = link_to "&euro;".html_safe, "?currency=#{CGI.escape "&euro;"}"
 
       = link_to "Back", :back
 

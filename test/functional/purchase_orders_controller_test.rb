@@ -11,6 +11,10 @@ class PurchaseOrdersControllerTest < ActionController::TestCase
     assert_not_nil assigns(:purchase_orders)
   end
 
+  test "should deny access if not logged in" do
+    
+  end
+
   test "should get new" do
     get :new
     assert_response :success

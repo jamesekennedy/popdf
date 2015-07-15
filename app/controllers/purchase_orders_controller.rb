@@ -25,7 +25,7 @@ class PurchaseOrdersController < ApplicationController
       format.pdf do
         # headers['Content-Disposition'] = "attachment; filename=#{@purchase_order.to_label}"
       
-        pdf = render pdf: "show", encoding: 'utf8', layout: "pdf"
+        pdf = render pdf: "show", encoding: 'utf8', layout: "pdf", disposition: "attachment", :footer => {:html => {:template => 'layouts/footer.html.haml'}}
 
       end
     end

@@ -52,6 +52,7 @@
 
       .actions
         %br/
+        = recaptcha_tags if @purchase_order.new_record?
         %br/
         %br/
         = f.submit 'Save & Download', class: :button

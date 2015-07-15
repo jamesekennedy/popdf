@@ -85,7 +85,7 @@ class PurchaseOrdersController < ApplicationController
     session[:preset] = params[:purchase_order]
 
     respond_to do |format|
-      if @purchase_order.save
+      if verify_recaptcha(:model => @purchase_order, :message => "Oh! It's error with reCAPTCHA!") && @purchase_order.save
         format.html { redirect_to purchase_order_path(@purchase_order )}
         format.json { render json: @purchase_order, status: :created, location: @purchase_order }
       else

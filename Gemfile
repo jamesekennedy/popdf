@@ -54,3 +54,5 @@ gem 'unicorn'
 gem 'capistrano'
 gem "postmark-rails", :require => "postmark-rails"
 gem 'postmark-mitt'
+
+gem "recaptcha", :require => "recaptcha/rails"
